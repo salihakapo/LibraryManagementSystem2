@@ -11,7 +11,6 @@ namespace LibraryManagementSystem2.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     public partial class TBLMEMBERS
     {
@@ -23,13 +22,10 @@ namespace LibraryManagementSystem2.Models.Entity
         }
     
         public int ID { get; set; }
-        [Required(ErrorMessage = "You cannot leave the name blank")]
-        [StringLength(20,ErrorMessage = "You can enter up to 20 characters.")]
         public string NAME { get; set; }
         public string SURNAME { get; set; }
         public string EMAIL { get; set; }
         public string USERNAME { get; set; }
-        [StringLength(15, ErrorMessage = "You can enter up to 15 characters.")]
         public string PASSWORD { get; set; }
         public string PHOTO { get; set; }
         public string PHONE { get; set; }

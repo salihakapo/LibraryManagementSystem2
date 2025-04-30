@@ -11,7 +11,6 @@ namespace LibraryManagementSystem2.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     public partial class TBLSTAFF
     {
@@ -22,7 +21,7 @@ namespace LibraryManagementSystem2.Models.Entity
         }
     
         public byte ID { get; set; }
-        [Required(ErrorMessage = "Staff name cannot be left blank")]
+
         public string STAFF { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
