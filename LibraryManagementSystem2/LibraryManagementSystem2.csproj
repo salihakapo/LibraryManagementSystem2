@@ -159,6 +159,7 @@
     <Compile Include="Controllers\HomepageController.cs" />
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Global.asax.cs">
@@ -279,12 +280,15 @@
     <Content Include="web\img\kasagi.jpg" />
     <Content Include="web\img\library.png" />
     <Content Include="web\img\library3.jpg" />
+    <Content Include="web\img\MyLeft.jpg" />
     <Content Include="web\img\portfolio\cabin.png" />
     <Content Include="web\img\portfolio\cake.png" />
     <Content Include="web\img\portfolio\circus.png" />
     <Content Include="web\img\portfolio\game.png" />
     <Content Include="web\img\portfolio\safe.png" />
     <Content Include="web\img\portfolio\submarine.png" />
+    <Content Include="web\img\TheGreatSpeech.jpg" />
+    <Content Include="web\img\thelittleprince.jpg" />
     <Content Include="web\index.html" />
     <Content Include="web\js\contact_me.js" />
     <Content Include="web\js\contact_me.min.js" />
@@ -409,6 +413,7 @@
     <Content Include="web\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="web\vendor\jquery\jquery.min.map" />
     <Content Include="web\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\Showcase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
