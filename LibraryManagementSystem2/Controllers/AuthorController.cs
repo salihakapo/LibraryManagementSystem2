@@ -23,6 +23,10 @@ namespace LibraryManagementSystem2.Controllers
         [HttpPost]
         public ActionResult AddAuthor(TBLAUTHOR p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddAuthor");
+            }
             db.TBLAUTHOR.Add(p);
             db.SaveChanges();
             return View();
