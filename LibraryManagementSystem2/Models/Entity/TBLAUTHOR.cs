@@ -11,6 +11,7 @@ namespace LibraryManagementSystem2.Models.Entity
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class TBLAUTHOR
     {
@@ -21,7 +22,9 @@ namespace LibraryManagementSystem2.Models.Entity
         }
 
         public int ID { get; set; }
+        [Required(ErrorMessage = "You cannot leave the author name blank.")]
         public string NAME { get; set; }
+        [StringLength(20, ErrorMessage = "The surname cannot be longer than 20 characters.")]
         public string SURNAME { get; set; }
         public string DETAILS { get; set; }
 

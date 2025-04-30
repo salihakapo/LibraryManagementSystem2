@@ -8,10 +8,12 @@
     <div style="margin-top:15px">
         <label>Author Name</label>
         @Html.TextBoxFor(a => a.NAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.NAME, "", new { @style = "color:forestgreen" })
     </div>
     <div style="margin-top:15px">
         <label>Author Surname</label>
         @Html.TextBoxFor(a => a.SURNAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.SURNAME, "", new { @style = "color:forestgreen" })
     </div>
     <div style="margin-top:15px">
         <label>Author Detail Information</label>
