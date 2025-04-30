@@ -12,18 +12,9 @@ namespace LibraryManagementSystem2.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TBLSTAFF
+    public partial class TBLABOUT
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TBLSTAFF()
-        {
-            this.TBLMOVEMENT = new HashSet<TBLMOVEMENT>();
-        }
-    
         public byte ID { get; set; }
-        public string STAFF { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TBLMOVEMENT> TBLMOVEMENT { get; set; }
+        public string EXPLANATION { get; set; }
     }
 }

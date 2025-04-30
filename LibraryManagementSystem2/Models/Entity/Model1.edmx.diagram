@@ -20,6 +20,8 @@
         <AssociationConnector Association="DBLIBRARY2Model.FK_TBLPENALTIES_TBLMEMBERS" ManuallyRouted="false" />
         <AssociationConnector Association="DBLIBRARY2Model.FK_TBLPENALTIES_TBLMOVEMENT" ManuallyRouted="false" />
         <AssociationConnector Association="DBLIBRARY2Model.FK_TBLMOVEMENT_TBLSTAFF" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLABOUT" Width="1.5" PointX="6.375" PointY="7.75" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLCONTACT" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

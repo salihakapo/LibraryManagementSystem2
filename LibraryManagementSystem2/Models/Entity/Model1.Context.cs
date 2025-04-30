@@ -34,5 +34,7 @@ namespace LibraryManagementSystem2.Models.Entity
         public virtual DbSet<TBLMOVEMENT> TBLMOVEMENT { get; set; }
         public virtual DbSet<TBLPENALTIES> TBLPENALTIES { get; set; }
         public virtual DbSet<TBLSTAFF> TBLSTAFF { get; set; }
+        public virtual DbSet<TBLABOUT> TBLABOUT { get; set; }
+        public virtual DbSet<TBLCONTACT> TBLCONTACT { get; set; }
     }
 }
