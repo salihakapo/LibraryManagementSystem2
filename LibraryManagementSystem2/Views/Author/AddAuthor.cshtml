@@ -1,0 +1,25 @@
+﻿@model LibraryManagementSystem2.Models.Entity.TBLAUTHOR
+@{
+    ViewBag.Title = "AddAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Author Name</label>
+        @Html.TextBoxFor(a => a.NAME, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Author Surname</label>
+        @Html.TextBoxFor(a => a.SURNAME, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Author Detail Information</label>
+        @Html.TextAreaFor(a => a.DETAILS, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Add Author</button>
+    </div>
+</form>
+
+

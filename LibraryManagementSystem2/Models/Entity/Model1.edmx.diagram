@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b119a91a5f44e6da9ec80d7c94a8115" Name="Diagram1">
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLAUTHOR" Width="1.5" PointX="3.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLBOOK" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLCATEGORY" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLFINESFUND" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLMEMBERS" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLMOVEMENT" Width="1.5" PointX="3.375" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLPENALTIES" Width="1.5" PointX="6.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLSTAFF" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLBOOK_TBLAUTHOR" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLBOOK_TBLCATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLMOVEMENT_TBLBOOK" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLMOVEMENT_TBLMEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLPENALTIES_TBLMEMBERS" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLPENALTIES_TBLMOVEMENT" ManuallyRouted="false" />
+        <AssociationConnector Association="DBLIBRARY2Model.FK_TBLMOVEMENT_TBLSTAFF" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+﻿@model LibraryManagementSystem2.Models.Entity.TBLMOVEMENT
+@{
+    ViewBag.Title = "LoanReturn";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateLoan", "Loan", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <label>Movement ID</label>
+        @Html.TextBoxFor(c => c.ID, new { @class = "form-control" })
+        <br />
+        <label>Book Name</label>
+        @Html.TextBoxFor(c => c.TBLBOOK.NAME, new { @class = "form-control" })
+        <br />
+        <label>Member</label>
+        @Html.TextBoxFor(c => c.TBLMEMBERS.NAME, new { @class = "form-control" })
+        <br />
+        <label>Staff</label>
+        @Html.TextBoxFor(c => c.TBLSTAFF.STAFF, new { @class = "form-control" })
+        <br />
+        <label>Borrow Date</label>
+        @Html.TextBoxFor(c => c.BORROWDATE, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Normal Return Date</label>
+        @Html.TextBoxFor(c => c.RETURNDATE, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Date Returned by Member</label>
+        <input type="text" class="form-control" name="MEMBERRETURNDATE" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <div>
+        <button class="btn btn-group" style="background-color:#64d8ca; color:white">Return Borrowed Book </button>
+    </div>
+}
+
+

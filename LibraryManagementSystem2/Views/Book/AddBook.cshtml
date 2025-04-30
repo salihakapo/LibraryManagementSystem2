@@ -1,0 +1,39 @@
+﻿@model LibraryManagementSystem2.Models.Entity.TBLBOOK
+@{
+    ViewBag.Title = "AddBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Book Name</label>
+        @Html.TextBoxFor(b => b.NAME, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Category</label>
+        @Html.DropDownListFor(b => b.TBLCATEGORY.ID, (List<SelectListItem>)ViewBag.vle1, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Book Author</label>
+        @Html.DropDownListFor(b => b.TBLAUTHOR.ID, (List<SelectListItem>)ViewBag.vle2, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Publication Date</label>
+        @Html.TextBoxFor(b => b.PUBLICATIONDATE, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Publisher</label>
+        @Html.TextBoxFor(b => b.PUBLISHER, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Page Count</label>
+        @Html.TextBoxFor(b => b.PAGECOUNT, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Add Book</button>
+    </div>
+    @*<input type="hidden" name="Status" value="True" />*@
+</form>
+
+

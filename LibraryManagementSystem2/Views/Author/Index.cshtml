@@ -1,0 +1,31 @@
+﻿@using LibraryManagementSystem2.Models.Entity
+@model List<TBLAUTHOR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Authors</h2>
+
+<table class=" table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SURNAME</th>
+        <th>DETAILS</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.ID</td>
+            <td>@a.NAME</td>
+            <td>@a.SURNAME</td>
+            <td>@a.DETAILS</td>
+            <td>@Html.ActionLink("Delete", "DeleteAuthor", new { id = a.ID }, new { @class = "btn btn-danger", onclick = "return confirm ('Do you want to delete?')" })</td>
+            <td><a href="/Author/GetAuthor/@a.ID" class="btn btn-success">Update</a></td>
+        </tr>
+    }
+</table>
+<a href="/Author/AddAuthor" class="btn btn-primary">Add New Author</a>

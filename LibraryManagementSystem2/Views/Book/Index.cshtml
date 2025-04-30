@@ -1,0 +1,50 @@
+﻿@using LibraryManagementSystem2.Models.Entity
+@using LibraryManagementSystem2.Models.Entity
+@model List<TBLBOOK>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Book Page</h2>
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Enter the book name to search: &nbsp</b> @Html.TextBox("p")
+        <input type="submit" value="Search" />
+    </div>
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Book Name</th>
+        <th>Category</th>
+        <th>Book Author</th>
+        <th>Publication Date</th>
+        <th>Publisher</th>
+        <th>Page Count</th>
+        <th>Status</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.ID</td>
+            <td>@b.NAME</td>
+            <td>@b.TBLCATEGORY.NAME</td>
+            <td>@b.TBLAUTHOR.NAME&nbsp @b.TBLAUTHOR.SURNAME</td>
+            <td>@b.PUBLICATIONDATE</td>
+            <td>@b.PUBLISHER</td>
+            <td>@b.PAGECOUNT</td>
+            <td>@b.STATUS</td>
+            <td><a href="/Book/DeleteBook/@b.ID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Book/GetBook/@b.ID" class="btn btn-success">UPDATE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Book/AddBook" class="btn btn-primary">Add New Book</a>
