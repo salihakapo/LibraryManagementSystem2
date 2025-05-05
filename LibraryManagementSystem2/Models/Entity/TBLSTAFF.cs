@@ -11,7 +11,8 @@ namespace LibraryManagementSystem2.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLSTAFF
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,11 @@ namespace LibraryManagementSystem2.Models.Entity
         {
             this.TBLMOVEMENT = new HashSet<TBLMOVEMENT>();
         }
-    
+
         public byte ID { get; set; }
+        [Required(ErrorMessage = "Staff name cannot be left blank.")]
         public string STAFF { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLMOVEMENT> TBLMOVEMENT { get; set; }
     }
