@@ -28,6 +28,9 @@
         <br />
         <label>Date Returned by Member</label>
         <input type="text" class="form-control" name="MEMBERRETURNDATE" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Number of Overdue Days</label>
+        <input type="text" class="form-control" id="Overdueinput" value="@ViewBag.vlue"/>
     </div>
     <div>
         <button class="btn btn-group" style="background-color:#64d8ca; color:white">Return Borrowed Book </button>

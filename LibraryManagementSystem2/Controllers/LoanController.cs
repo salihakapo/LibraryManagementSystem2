@@ -27,9 +27,13 @@ namespace LibraryManagementSystem2.Controllers
             db.SaveChanges();
             return View();
         }
-        public ActionResult LoanReturn(int id)
+        public ActionResult LoanReturn(TBLMOVEMENT p)
         {
-            var loan = db.TBLMOVEMENT.Find(id);
+            var loan = db.TBLMOVEMENT.Find(p.ID);
+            DateTime d1 = DateTime.Parse(loan.RETURNDATE.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.vlue = d3.TotalDays;
             return View("LoanReturn", loan);
         }
         public ActionResult UpdateLoan(TBLMOVEMENT p)

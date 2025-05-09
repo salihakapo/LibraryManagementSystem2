@@ -161,6 +161,7 @@
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -421,6 +422,7 @@
     <Content Include="web\vendor\jquery\jquery.min.map" />
     <Content Include="web\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Showcase\Index.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
