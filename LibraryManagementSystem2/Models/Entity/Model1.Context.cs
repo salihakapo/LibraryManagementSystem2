@@ -12,6 +12,8 @@ namespace LibraryManagementSystem2.Models.Entity
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DBLIBRARY2Entities : DbContext
     {
@@ -36,5 +38,10 @@ namespace LibraryManagementSystem2.Models.Entity
         public virtual DbSet<TBLSTAFF> TBLSTAFF { get; set; }
         public virtual DbSet<TBLABOUT> TBLABOUT { get; set; }
         public virtual DbSet<TBLCONTACT> TBLCONTACT { get; set; }
+    
+        public virtual ObjectResult<string> TheMostBookAuthor()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("TheMostBookAuthor");
+        }
     }
 }
