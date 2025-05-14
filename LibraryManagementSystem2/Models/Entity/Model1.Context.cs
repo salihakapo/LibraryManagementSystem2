@@ -43,5 +43,15 @@ namespace LibraryManagementSystem2.Models.Entity
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("TheMostBookAuthor");
         }
+    
+        public virtual ObjectResult<string> TheMostReadBook()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("TheMostReadBook");
+        }
+    
+        public virtual ObjectResult<string> TopPerformingStaff()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("TopPerformingStaff");
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace LibraryManagementSystem2.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLAUTHOR
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,14 @@ namespace LibraryManagementSystem2.Models.Entity
         {
             this.TBLBOOK = new HashSet<TBLBOOK>();
         }
-    
+
         public int ID { get; set; }
+        [Required(ErrorMessage = "Author name cannot be left blank")]
         public string NAME { get; set; }
+        [StringLength(20, ErrorMessage = "Surname cannot exceed 20 characters")]
         public string SURNAME { get; set; }
         public string DETAILS { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLBOOK> TBLBOOK { get; set; }
     }

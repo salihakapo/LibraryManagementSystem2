@@ -200,6 +200,8 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="TheMostBookAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TheMostReadBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TopPerformingStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBLIBRARY2ModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" Schema="dbo" store:Type="Tables" />
@@ -465,6 +467,8 @@
           <EntitySet Name="TBLABOUT" EntityType="DBLIBRARY2Model.TBLABOUT" />
           <EntitySet Name="TBLCONTACT" EntityType="DBLIBRARY2Model.TBLCONTACT" />
           <FunctionImport Name="TheMostBookAuthor" ReturnType="Collection(String)" />
+          <FunctionImport Name="TheMostReadBook" ReturnType="Collection(String)" />
+          <FunctionImport Name="TopPerformingStaff" ReturnType="Collection(String)" />
         </EntityContainer>
         <Association Name="FK_TBLMOVEMENT_TBLSTAFF">
           <End Type="DBLIBRARY2Model.TBLSTAFF" Role="TBLSTAFF" Multiplicity="0..1" />
@@ -623,6 +627,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="TheMostBookAuthor" FunctionName="DBLIBRARY2Model.Store.TheMostBookAuthor" />
+          <FunctionImportMapping FunctionImportName="TheMostReadBook" FunctionName="DBLIBRARY2Model.Store.TheMostReadBook" />
+          <FunctionImportMapping FunctionImportName="TopPerformingStaff" FunctionName="DBLIBRARY2Model.Store.TopPerformingStaff" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
