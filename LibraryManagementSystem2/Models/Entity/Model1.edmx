@@ -199,6 +199,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="TheMostActiveMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="TheMostBookAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="TheMostReadBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="TopPerformingStaff" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -469,6 +470,7 @@
           <FunctionImport Name="TheMostBookAuthor" ReturnType="Collection(String)" />
           <FunctionImport Name="TheMostReadBook" ReturnType="Collection(String)" />
           <FunctionImport Name="TopPerformingStaff" ReturnType="Collection(String)" />
+          <FunctionImport Name="TheMostActiveMember" ReturnType="Collection(String)" />
         </EntityContainer>
         <Association Name="FK_TBLMOVEMENT_TBLSTAFF">
           <End Type="DBLIBRARY2Model.TBLSTAFF" Role="TBLSTAFF" Multiplicity="0..1" />
@@ -629,6 +631,7 @@
           <FunctionImportMapping FunctionImportName="TheMostBookAuthor" FunctionName="DBLIBRARY2Model.Store.TheMostBookAuthor" />
           <FunctionImportMapping FunctionImportName="TheMostReadBook" FunctionName="DBLIBRARY2Model.Store.TheMostReadBook" />
           <FunctionImportMapping FunctionImportName="TopPerformingStaff" FunctionName="DBLIBRARY2Model.Store.TopPerformingStaff" />
+          <FunctionImportMapping FunctionImportName="TheMostActiveMember" FunctionName="DBLIBRARY2Model.Store.TheMostActiveMember" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -53,5 +53,10 @@ namespace LibraryManagementSystem2.Models.Entity
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("TopPerformingStaff");
         }
+    
+        public virtual ObjectResult<string> TheMostActiveMember()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("TheMostActiveMember");
+        }
     }
 }

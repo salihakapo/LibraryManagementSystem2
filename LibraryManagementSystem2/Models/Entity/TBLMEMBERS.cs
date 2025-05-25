@@ -27,7 +27,6 @@ namespace LibraryManagementSystem2.Models.Entity
         [StringLength(20, ErrorMessage = "You can enter up to 20 characters")]
         public string NAME { get; set; }
         public string SURNAME { get; set; }
-        [Required(ErrorMessage = "You cannot leave the name blank")]
         public string EMAIL { get; set; }
         public string USERNAME { get; set; }
         [StringLength(15, ErrorMessage = "You can enter up to 15 characters")]

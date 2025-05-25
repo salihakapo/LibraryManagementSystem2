@@ -20,14 +20,14 @@ namespace LibraryManagementSystem2.Models.Entity
         {
             this.TBLBOOK = new HashSet<TBLBOOK>();
         }
-
+    
         public int ID { get; set; }
-        [Required(ErrorMessage = "Author name cannot be left blank")]
+        [Required(ErrorMessage ="You cannot leave the author name blank")]
         public string NAME { get; set; }
-        [StringLength(20, ErrorMessage = "Surname cannot exceed 20 characters")]
+        [StringLength(20,ErrorMessage ="You can enter up to 20 characters")]
         public string SURNAME { get; set; }
         public string DETAILS { get; set; }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLBOOK> TBLBOOK { get; set; }
     }

@@ -33,22 +33,26 @@ namespace LibraryManagementSystem2.Controllers
             var value3 = db.TBLPENALTIES.Sum(x => x.MONEY);
             var value4 = db.TBLBOOK.Where(x => x.STATUS == false).Count();
             var value5 = db.TBLCATEGORY.Count();
+            var value6 = db.TheMostActiveMember().FirstOrDefault();
             var value7 = db.TheMostReadBook().FirstOrDefault();
             var value8 = db.TheMostBookAuthor().FirstOrDefault();
-            var value9 = db.TBLBOOK.GroupBy(x => x.PUBLISHER).OrderByDescending(z => z.Count()).Select(a => new { a.Key }).FirstOrDefault();
+            var themostbookauthor = db.TBLBOOK.GroupBy(x => x.PUBLISHER).OrderByDescending(z => z.Count()).Select(a => a.Key).FirstOrDefault();
             var value10 = db.TopPerformingStaff().FirstOrDefault();
             var value11 = db.TBLCONTACT.Count();
+            var value12 = db.TBLMOVEMENT.Where(x => x.BORROWDATE == DateTime.Today).Select(b => b.BOOK).Count();
 
             ViewBag.vle1 = value1;
             ViewBag.vle2 = value2;
             ViewBag.vle3 = value3;
             ViewBag.vle4 = value4;
             ViewBag.vle5 = value5;
+            ViewBag.vle6 = value6;
             ViewBag.vle7 = value7;
             ViewBag.vle8 = value8;
-            ViewBag.vle9 = value9;
+            ViewBag.vle9 = themostbookauthor;
             ViewBag.vle10 = value10;
             ViewBag.vle11 = value11;
+            ViewBag.vle12 = value12;
             return View();
         }
     }
