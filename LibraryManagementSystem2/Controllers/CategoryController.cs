@@ -12,7 +12,7 @@ namespace LibraryManagementSystem2.Controllers
         DBLIBRARY2Entities db = new DBLIBRARY2Entities();
         public ActionResult Index()
         {
-            var value = db.TBLCATEGORY.ToList();
+            var value = db.TBLCATEGORY.Where(x => x.STATUS == true).ToList();
             return View(value);
         }
         [HttpGet]
@@ -30,7 +30,8 @@ namespace LibraryManagementSystem2.Controllers
         public ActionResult DeleteCategory(int id)
         {
             var category = db.TBLCATEGORY.Find(id);
-            db.TBLCATEGORY.Remove(category);
+            //db.TBLCATEGORY.Remove(category);
+            category.STATUS = false;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

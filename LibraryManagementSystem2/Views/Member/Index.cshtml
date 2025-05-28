@@ -15,12 +15,10 @@
         <th>MEMBER NAME</th>
         <th>MEMBER SURNAME</th>
         <th>EMAIL</th>
-        <th>USERNAME</th>
-        <th>PASSWORD</th>
-        <th>PHONE</th>
         <th>SCHOOL</th>
         <th>DELETE</th>
         <th>UPDATE</th>
+        <th>BOOK HISTORY</th>
     </tr>
     @foreach (var member in Model)
     {
@@ -29,12 +27,10 @@
             <td>@member.NAME</td>
             <td>@member.SURNAME</td>
             <td>@member.EMAIL</td>
-            <td>@member.USERNAME</td>
-            <td>@member.PASSWORD</td>
-            <td>@member.PHONE</td>
             <td>@member.SCHOOL</td>
             <td><a href="/Member/DeleteMember/@member.ID" class="btn btn-danger">DELETE</a></td>
             <td><a href="/Member/GetMember/@member.ID" class="btn btn-success">UPDATE</a></td>
+            <td><a href="/Member/MemberBookHistory/@member.ID" class="btn btn-default" style="background-color:lightblue">BOOK HISTORY</a></td>
         </tr>
     }
 </table>

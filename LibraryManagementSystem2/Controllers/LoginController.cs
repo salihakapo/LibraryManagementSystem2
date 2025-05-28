@@ -24,6 +24,8 @@ namespace LibraryManagementSystem2.Controllers
             {
                 FormsAuthentication.SetAuthCookie(informations.EMAIL, false);
                 Session["Mail"] = informations.EMAIL.ToString();
+                Session["Name"] = informations.NAME.ToString();
+                Session["Surname"] = informations.SURNAME.ToString();
                 //TempData["Id"] = informations.ID.ToString();
                 //TempData["Name"] = informations.NAME.ToString();
                 //TempData["Surname"] = informations.SURNAME.ToString();

@@ -20,13 +20,15 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-light border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading">Name Surname </div>
+            <div class="sidebar-heading">@Session["Name"]  @Session["Surname"] </div>
             <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action bg-light">My Profile</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Messages</a>
+                <a href="/MyPanel/Index/" class="list-group-item list-group-item-action bg-light">My Profile</a>
+                <a href="/Messages/Index/" class="list-group-item list-group-item-action bg-light">Inbox</a>
+                <a href="/Messages/Send/" class="list-group-item list-group-item-action bg-light">Sent Messages</a>
+                <a href="/Messages/NewMessage/" class="list-group-item list-group-item-action bg-light">New Message</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Announcements</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">My Books</a>
-                <a href="#" class="list-group-item list-group-item-action bg-light">Showcase</a>
+                <a href="/MyPanel/MyBooks" class="list-group-item list-group-item-action bg-light">My Books</a>
+                <a href="/Showcase/Index/" class="list-group-item list-group-item-action bg-light">Showcase</a>
                 <a href="#" class="list-group-item list-group-item-action bg-light">Help</a>
             </div>
         </div>
@@ -41,14 +43,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/Showcase/Index/#about">About us <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Settings
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">My Account</a>
+                                <a class="dropdown-item" href="/MyPanel/Index/">My Account</a>
                                 <a class="dropdown-item" href="#">Log out</a>
                                 <div class="dropdown-divider"></div>
                             </div>

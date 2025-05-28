@@ -1,0 +1,27 @@
+﻿@using LibraryManagementSystem2.Models.Entity
+@model List<TBLMESSAGES>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMyPanel.cshtml";
+}
+
+<h2>Inbox Page</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Sender</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SENDER</td>
+            <td>@x.SUBJECT</td>
+            <td>@x.MESSAGE</td>
+            <td>@x.DATE</td>
+        </tr>
+    }
+</table>
+

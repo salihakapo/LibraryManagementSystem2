@@ -22,6 +22,7 @@ namespace LibraryManagementSystem2.Models.Entity
     
         public byte ID { get; set; }
         public string NAME { get; set; }
+        public Nullable<bool> STATUS { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLBOOK> TBLBOOK { get; set; }

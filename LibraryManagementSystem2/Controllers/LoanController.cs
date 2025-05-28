@@ -18,14 +18,41 @@ namespace LibraryManagementSystem2.Controllers
         [HttpGet]
         public ActionResult Lend()
         {
+            List<SelectListItem> value1 = (from x in db.TBLMEMBERS.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.NAME + " " + x.SURNAME,
+                                               Value = x.ID.ToString()
+                                           }).ToList();
+            List<SelectListItem> value2 = (from y in db.TBLBOOK.Where(y => y.STATUS == true).ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = y.NAME,
+                                               Value = y.ID.ToString()
+                                           }).ToList();
+            List<SelectListItem> value3 = (from z in db.TBLSTAFF.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = z.STAFF,
+                                               Value = z.ID.ToString()
+                                           }).ToList();
+            ViewBag.vle1 = value1;
+            ViewBag.vle2 = value2;
+            ViewBag.vle3 = value3;
             return View();
         }
         [HttpPost]
         public ActionResult Lend(TBLMOVEMENT p)
         {
+            var v1 = db.TBLMEMBERS.Where(x => x.ID == p.TBLMEMBERS.ID).FirstOrDefault();
+            var v2 = db.TBLBOOK.Where(y => y.ID == p.TBLBOOK.ID).FirstOrDefault();
+            var v3 = db.TBLSTAFF.Where(z => z.ID == p.TBLSTAFF.ID).FirstOrDefault();
+            p.TBLMEMBERS = v1;
+            p.TBLBOOK = v2;
+            p.TBLSTAFF = v3;
             db.TBLMOVEMENT.Add(p);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
         public ActionResult LoanReturn(TBLMOVEMENT p)
         {

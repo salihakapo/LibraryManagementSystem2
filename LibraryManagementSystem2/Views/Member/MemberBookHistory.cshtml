@@ -1,0 +1,26 @@
+﻿@using LibraryManagementSystem2.Models.Entity;
+@model List<TBLMOVEMENT>
+@{
+    ViewBag.Title = "MemberBookHistory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Member: @ViewBag.m1</h2>
+<table class="table table-danger">
+    <tr>
+        <th>Book Name</th>
+        <th>Staff</th>
+        <th>Borrow Date</th>
+        <th>Member Return Date</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.TBLBOOK.NAME</td>
+            <td>@x.TBLSTAFF.STAFF</td>
+            <td>@Convert.ToDateTime(x.BORROWDATE).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(x.MEMBERRETURNDATE).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+

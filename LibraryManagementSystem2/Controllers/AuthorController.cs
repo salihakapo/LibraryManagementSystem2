@@ -52,6 +52,12 @@ namespace LibraryManagementSystem2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult AuthorBooks (int id)
+        {
+            var author = db.TBLBOOK.Where(x => x.AUTHOR == id).ToList();
+            var authname = db.TBLAUTHOR.Where(y => y.ID == id).Select(z => z.NAME + " " + z.SURNAME).FirstOrDefault();
+            ViewBag.a1 = authname;
+            return View(author);
+        }
     }
 }

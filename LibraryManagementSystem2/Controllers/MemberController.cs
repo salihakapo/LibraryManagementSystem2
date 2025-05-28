@@ -60,5 +60,12 @@ namespace LibraryManagementSystem2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MemberBookHistory(int id)
+        {
+            var bookhis = db.TBLMOVEMENT.Where(x => x.MEMBER == id).ToList();
+            var membook = db.TBLMEMBERS.Where(y => y.ID == id).Select(z => z.NAME + " " + z.SURNAME).FirstOrDefault();
+            ViewBag.m1 = membook;
+            return View(bookhis);
+        }
     }
 }

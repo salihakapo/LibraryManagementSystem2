@@ -12,9 +12,9 @@
         <th>ID</th>
         <th>NAME</th>
         <th>SURNAME</th>
-        <th>DETAILS</th>
         <th>DELETE</th>
         <th>UPDATE</th>
+        <th>AUTHOR'S BOOKS</th>
     </tr>
     @foreach (var a in Model)
     {
@@ -22,9 +22,9 @@
             <td>@a.ID</td>
             <td>@a.NAME</td>
             <td>@a.SURNAME</td>
-            <td>@a.DETAILS</td>
             <td>@Html.ActionLink("Delete", "DeleteAuthor", new { id = a.ID }, new { @class = "btn btn-danger", onclick = "return confirm ('Do you want to delete?')" })</td>
             <td><a href="/Author/GetAuthor/@a.ID" class="btn btn-success">Update</a></td>
+            <td><a href="/Author/AuthorBooks/@a.ID" class="btn btn-default" style="background-color:lightblue">Author's Books</a></td>
         </tr>
     }
 </table>

@@ -32,5 +32,12 @@ namespace LibraryManagementSystem2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult MyBooks()
+        {
+            var user = (string)Session["Mail"];
+            var ID = db.TBLMEMBERS.Where(x => x.EMAIL == user.ToString()).Select(z => z.ID).FirstOrDefault();
+            var value = db.TBLMOVEMENT.Where(x => x.MEMBER == ID).ToList();
+            return View(value);
+        }
     }
 }

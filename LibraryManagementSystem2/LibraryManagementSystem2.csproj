@@ -160,6 +160,7 @@
     <Compile Include="Controllers\LoanController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\MyPanelController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
@@ -206,6 +207,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TBLMEMBERS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\TBLMESSAGES.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\TBLMOVEMENT.cs">
@@ -583,6 +587,12 @@
     <Content Include="webpanel\vendor\jquery\jquery.min.map" />
     <Content Include="webpanel\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\MyPanel\Index.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Messages\NewMessage.cshtml" />
+    <Content Include="Views\Messages\Send.cshtml" />
+    <Content Include="Views\MyPanel\MyBooks.cshtml" />
+    <Content Include="Views\Author\AuthorBooks.cshtml" />
+    <Content Include="Views\Member\MemberBookHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

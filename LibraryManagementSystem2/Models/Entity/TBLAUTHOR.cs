@@ -11,8 +11,7 @@ namespace LibraryManagementSystem2.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TBLAUTHOR
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,9 +21,7 @@ namespace LibraryManagementSystem2.Models.Entity
         }
     
         public int ID { get; set; }
-        [Required(ErrorMessage ="You cannot leave the author name blank")]
         public string NAME { get; set; }
-        [StringLength(20,ErrorMessage ="You can enter up to 20 characters")]
         public string SURNAME { get; set; }
         public string DETAILS { get; set; }
     

@@ -8,15 +8,18 @@
     <div></div>
     <div style="margin-top:15px">
         <label>Member ID</label>
-        @Html.TextBoxFor(b => b.MEMBER, new { @class = "form-control" })
+        @*@Html.TextBoxFor(b => b.MEMBER, new { @class = "form-control" })*@
+        @Html.DropDownListFor(b => b.TBLMEMBERS.ID, (List<SelectListItem>)ViewBag.vle1, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Book ID</label>
-        @Html.TextBoxFor(b => b.BOOK, new { @class = "form-control" })
+        @*@Html.TextBoxFor(b => b.BOOK, new { @class = "form-control" })*@
+        @Html.DropDownListFor(b => b.TBLBOOK.ID, (List<SelectListItem>)ViewBag.vle2, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Staff ID</label>
-        @Html.TextBoxFor(b => b.STAFF, new { @class = "form-control" })
+        @*@Html.TextBoxFor(b => b.STAFF, new { @class = "form-control" })*@
+        @Html.DropDownListFor(b => b.TBLSTAFF.ID, (List<SelectListItem>)ViewBag.vle3, new { @class = "form-control" })
     </div>
     <div style="margin-top:15px">
         <label>Book Borrow Date</label>
