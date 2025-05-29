@@ -1,0 +1,27 @@
+﻿@model LibraryManagementSystem2.Models.Entity.TBLANNOUNCEMENTS
+@{
+    ViewBag.Title = "DetailAnnouncement";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateAnnouncement", "Announcement", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(a => a.ID)
+        @Html.TextBoxFor(a => a.ID, new { @class = "form-control" })
+        <br />
+        <label>Announcement Category</label>
+        @Html.TextBoxFor(a => a.CATEGORY, new { @class = "form-control" })
+        <br />
+        <label>Announcement Content</label>
+        @Html.TextAreaFor(a => a.CONTENTS, new { @class = "form-control" })
+        <br />
+        <label>Announcement Date</label>
+        @Html.TextBoxFor(a => a.DATE, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Update</button>
+    </div>
+}
+

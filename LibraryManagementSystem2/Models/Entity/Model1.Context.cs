@@ -39,6 +39,7 @@ namespace LibraryManagementSystem2.Models.Entity
         public virtual DbSet<TBLABOUT> TBLABOUT { get; set; }
         public virtual DbSet<TBLCONTACT> TBLCONTACT { get; set; }
         public virtual DbSet<TBLMESSAGES> TBLMESSAGES { get; set; }
+        public virtual DbSet<TBLANNOUNCEMENTS> TBLANNOUNCEMENTS { get; set; }
     
         public virtual ObjectResult<string> TheMostBookAuthor()
         {

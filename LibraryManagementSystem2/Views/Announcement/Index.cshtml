@@ -1,0 +1,46 @@
+﻿@using LibraryManagementSystem2.Models.Entity;
+@model List<TBLANNOUNCEMENTS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    string color = "";
+}
+
+<h2>Announcements</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Announcements ID</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Delete</th>
+        <th>Content</th>
+    </tr>
+    @foreach (var ann in Model)
+    {
+        if (ann.CATEGORY == "Other")
+        {
+            color = "bg-info text-white";
+        }
+        if (ann.CATEGORY == "New book")
+        {
+            color = "bg-warning text-white";
+        }
+        if (ann.CATEGORY == "Bring the books on time")
+        {
+            color = "bg-danger text-white";
+        }
+        if (ann.CATEGORY == "Communication")
+        {
+            color = "bg-success text-white";
+        }
+        <tr class="@color">
+            <td>@ann.ID</td>
+            <td>@ann.CATEGORY</td>
+            <td>@Convert.ToDateTime(ann.DATE).ToString("dd/MM/yyy")</td>
+            <td><a href="/Announcement/DeleteAnnouncement/@ann.ID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Announcement/DetailAnnouncement/@ann.ID" class="btn btn-default" style="background-color:skyblue; color: white">DETAILS</a></td>
+        </tr>
+    }
+</table>
+<a href="/Announcement/NewAnnouncement/" class="btn btn-primary">Add New Announcement</a>

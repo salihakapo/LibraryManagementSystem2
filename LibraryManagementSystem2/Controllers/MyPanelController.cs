@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using LibraryManagementSystem2.Models.Entity;
 namespace LibraryManagementSystem2.Controllers
 {
@@ -38,6 +39,16 @@ namespace LibraryManagementSystem2.Controllers
             var ID = db.TBLMEMBERS.Where(x => x.EMAIL == user.ToString()).Select(z => z.ID).FirstOrDefault();
             var value = db.TBLMOVEMENT.Where(x => x.MEMBER == ID).ToList();
             return View(value);
+        }
+        public ActionResult Announcement()
+        {
+            var announcementlist = db.TBLANNOUNCEMENTS.ToList();
+            return View(announcementlist);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Login");
         }
     }
 }

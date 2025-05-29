@@ -22,6 +22,15 @@
           <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EXPLANATION" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="TBLANNOUNCEMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CATEGORY" Type="varchar" MaxLength="50" />
+          <Property Name="CONTENTS" Type="varchar" MaxLength="200" />
+          <Property Name="DATE" Type="datetime" />
+        </EntityType>
         <EntityType Name="TBLAUTHOR">
           <Key>
             <PropertyRef Name="ID" />
@@ -218,6 +227,7 @@
         <EntityContainer Name="DBLIBRARY2ModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLANNOUNCEMENTS" EntityType="Self.TBLANNOUNCEMENTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLAUTHOR" EntityType="Self.TBLAUTHOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLBOOK" EntityType="Self.TBLBOOK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLCATEGORY" EntityType="Self.TBLCATEGORY" Schema="dbo" store:Type="Tables" />
@@ -486,6 +496,7 @@
           <FunctionImport Name="TopPerformingStaff" ReturnType="Collection(String)" />
           <FunctionImport Name="TheMostActiveMember" ReturnType="Collection(String)" />
           <EntitySet Name="TBLMESSAGES" EntityType="DBLIBRARY2Model.TBLMESSAGES" />
+          <EntitySet Name="TBLANNOUNCEMENTS" EntityType="DBLIBRARY2Model.TBLANNOUNCEMENTS" />
         </EntityContainer>
         <Association Name="FK_TBLMOVEMENT_TBLSTAFF">
           <End Type="DBLIBRARY2Model.TBLSTAFF" Role="TBLSTAFF" Multiplicity="0..1" />
@@ -526,6 +537,15 @@
           <Property Name="SUBJECT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MESSAGE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TBLANNOUNCEMENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONTENTS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -667,6 +687,16 @@
                 <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
                 <ScalarProperty Name="RECEIVER" ColumnName="RECEIVER" />
                 <ScalarProperty Name="SENDER" ColumnName="SENDER" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLANNOUNCEMENTS">
+            <EntityTypeMapping TypeName="DBLIBRARY2Model.TBLANNOUNCEMENTS">
+              <MappingFragment StoreEntitySet="TBLANNOUNCEMENTS">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
