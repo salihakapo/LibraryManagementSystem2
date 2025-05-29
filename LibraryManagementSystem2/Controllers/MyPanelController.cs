@@ -7,12 +7,12 @@ using System.Web.Security;
 using LibraryManagementSystem2.Models.Entity;
 namespace LibraryManagementSystem2.Controllers
 {
+    [Authorize]
     public class MyPanelController : Controller
     {
         // GET: MyPanel
         DBLIBRARY2Entities db = new DBLIBRARY2Entities();
         [HttpGet]
-        [Authorize]
         public ActionResult Index()
         {
             var membermail = (string)Session["Mail"];
