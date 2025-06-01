@@ -7,6 +7,7 @@ using LibraryManagementSystem2.Models.Entity;
 using System.Web.Security;
 namespace LibraryManagementSystem2.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
