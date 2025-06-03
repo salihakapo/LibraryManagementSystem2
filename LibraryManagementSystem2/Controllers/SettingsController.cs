@@ -52,7 +52,6 @@ namespace LibraryManagementSystem2.Controllers
             var admin = db.TBLADMIN.Find(p.ID);
             admin.USERNAME = p.USERNAME;
             admin.PASSWORD = p.PASSWORD;
-            admin.AUTHORITY = p.AUTHORITY;
             db.SaveChanges();
             return RedirectToAction("Index2");
         }

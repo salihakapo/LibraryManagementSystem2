@@ -13,7 +13,6 @@
     <tr>
         <th>ID</th>
         <th>Username</th>
-        <th>Authority</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
@@ -22,7 +21,6 @@
         <tr>
             <td>@item.ID</td>
             <td>@item.USERNAME</td>
-            <td>@item.AUTHORITY</td>
             <td>
                 <a class="btn btn-info btn-sm" href="/Settings/UpdateAdmin/@item.ID">
                     <i class="fas fa-pencil-alt">
@@ -57,9 +55,6 @@
                     <br />
                     <label>Password</label>
                     <input type="text" name="PASSWORD" class="form-control" />
-                    <br />
-                    <label>Authority</label>
-                    <input type="text" name="AUTHORITY" class="form-control" />
                     <br />
                     <button class="btn btn-info">Save</button>
                 </div>
