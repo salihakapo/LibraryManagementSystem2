@@ -36,6 +36,10 @@
             <label>Page Count</label>
             @Html.TextBoxFor(b => b.PAGECOUNT, new { @class = "form-control" })
         </div>
+        <div style="margin-bottom:15px">
+            <label>Book Picture</label>
+            @Html.TextBoxFor(b => b.BOOKPICTURE, new { @class = "form-control" })
+        </div>
         <button class="btn btn-warning">Update Book Information</button>
         <input type="hidden" name="Status" value="True" />
     </div>

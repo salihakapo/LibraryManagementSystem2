@@ -92,6 +92,7 @@ namespace LibraryManagementSystem2.Controllers
             var auth = db.TBLAUTHOR.Where(a => a.ID == p.TBLAUTHOR.ID).FirstOrDefault();
             book.CATEGORY = ctg.ID;
             book.AUTHOR = auth.ID;
+            book.BOOKPICTURE = p.BOOKPICTURE;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
