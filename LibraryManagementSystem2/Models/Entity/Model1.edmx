@@ -22,6 +22,15 @@
           <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EXPLANATION" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="20" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="20" />
+          <Property Name="AUTHORITY" Type="char" MaxLength="1" />
+        </EntityType>
         <EntityType Name="TBLANNOUNCEMENTS">
           <Key>
             <PropertyRef Name="ID" />
@@ -227,6 +236,7 @@
         <EntityContainer Name="DBLIBRARY2ModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLABOUT" EntityType="Self.TBLABOUT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLANNOUNCEMENTS" EntityType="Self.TBLANNOUNCEMENTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLAUTHOR" EntityType="Self.TBLAUTHOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLBOOK" EntityType="Self.TBLBOOK" Schema="dbo" store:Type="Tables" />
@@ -497,6 +507,7 @@
           <FunctionImport Name="TheMostActiveMember" ReturnType="Collection(String)" />
           <EntitySet Name="TBLMESSAGES" EntityType="DBLIBRARY2Model.TBLMESSAGES" />
           <EntitySet Name="TBLANNOUNCEMENTS" EntityType="DBLIBRARY2Model.TBLANNOUNCEMENTS" />
+          <EntitySet Name="TBLADMIN" EntityType="DBLIBRARY2Model.TBLADMIN" />
         </EntityContainer>
         <Association Name="FK_TBLMOVEMENT_TBLSTAFF">
           <End Type="DBLIBRARY2Model.TBLSTAFF" Role="TBLSTAFF" Multiplicity="0..1" />
@@ -546,6 +557,15 @@
           <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CONTENTS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TBLADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHORITY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -697,6 +717,16 @@
                 <ScalarProperty Name="DATE" ColumnName="DATE" />
                 <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
                 <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLADMIN">
+            <EntityTypeMapping TypeName="DBLIBRARY2Model.TBLADMIN">
+              <MappingFragment StoreEntitySet="TBLADMIN">
+                <ScalarProperty Name="AUTHORITY" ColumnName="AUTHORITY" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

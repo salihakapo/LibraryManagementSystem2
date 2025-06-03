@@ -16,7 +16,8 @@ namespace LibraryManagementSystem2.Controllers
         public ActionResult Index()
         {
             var membermail = (string)Session["Mail"];
-            var value = db.TBLMEMBERS.FirstOrDefault(z => z.EMAIL == membermail);
+            //var value = db.TBLMEMBERS.FirstOrDefault(z => z.EMAIL == membermail);
+            var value = db.TBLANNOUNCEMENTS.ToList();
 
             var v1 = db.TBLMEMBERS.Where(x => x.EMAIL == membermail).Select(y => y.NAME).FirstOrDefault();
             ViewBag.v1 = v1;
@@ -39,7 +40,7 @@ namespace LibraryManagementSystem2.Controllers
             var v7 = db.TBLMEMBERS.Where(x => x.EMAIL == membermail).Select(y => y.EMAIL).FirstOrDefault();
             ViewBag.v7 = v7;
 
-            var memberid= db.TBLMEMBERS.Where(x => x.EMAIL == membermail).Select(y => y.ID).FirstOrDefault();
+            var memberid = db.TBLMEMBERS.Where(x => x.EMAIL == membermail).Select(y => y.ID).FirstOrDefault();
             var v8 = db.TBLMOVEMENT.Where(x => x.MEMBER == memberid).Count();
             ViewBag.v8 = v8;
 
@@ -84,6 +85,13 @@ namespace LibraryManagementSystem2.Controllers
         public PartialViewResult Partial1()
         {
             return PartialView();
+        }
+        public PartialViewResult Partial2()
+        {
+            var user = (string)Session["Mail"];
+            var id = db.TBLMEMBERS.Where(x => x.EMAIL == user).Select(y => y.ID).FirstOrDefault();
+            var memberfind = db.TBLMEMBERS.Find(id);
+            return PartialView("Partial2", memberfind);
         }
     }
 }

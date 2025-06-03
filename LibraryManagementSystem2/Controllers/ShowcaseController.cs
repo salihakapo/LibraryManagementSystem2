@@ -7,6 +7,7 @@ using LibraryManagementSystem2.Models.Entity;
 using LibraryManagementSystem2.Models.Myclasses;
 namespace LibraryManagementSystem2.Controllers
 {
+    [AllowAnonymous]
     public class ShowcaseController : Controller
     {
         // GET: Showcase

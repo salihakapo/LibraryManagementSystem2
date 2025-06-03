@@ -24,6 +24,7 @@
         <EntityTypeShape EntityType="DBLIBRARY2Model.TBLCONTACT" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="DBLIBRARY2Model.TBLMESSAGES" Width="1.5" PointX="8.375" PointY="7.75" />
         <EntityTypeShape EntityType="DBLIBRARY2Model.TBLANNOUNCEMENTS" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DBLIBRARY2Model.TBLADMIN" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

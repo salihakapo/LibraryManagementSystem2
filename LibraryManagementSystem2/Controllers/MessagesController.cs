@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using LibraryManagementSystem2.Models.Entity;
 namespace LibraryManagementSystem2.Controllers
@@ -36,6 +35,15 @@ namespace LibraryManagementSystem2.Controllers
             db.TBLMESSAGES.Add(t);
             db.SaveChanges();
             return RedirectToAction("Send", "Messages");
+        }
+        public PartialViewResult Partial1()
+        {
+            var membermail = (string)Session["Mail"].ToString();
+            var incomingnumber = db.TBLMESSAGES.Where(x => x.RECEIVER == membermail).Count();
+            ViewBag.v1 = incomingnumber;
+            var sentnumber = db.TBLMESSAGES.Where(x => x.SENDER == membermail).Count();
+            ViewBag.v2 = sentnumber;
+            return PartialView();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using LibraryManagementSystem2.Models.Entity;
 namespace LibraryManagementSystem2.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         // GET: Register
